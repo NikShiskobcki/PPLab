@@ -37,12 +37,11 @@ void juego(int &saldoFinal, int cantApuesta, int copa, bool gano){
 	if (gano){
 		saldoFinal += cantApuesta;
 		printf("Ha acertado\n");
-		printf("Saldo: %d", saldoFinal);
 	}else{
 		saldoFinal -= cantApuesta;
 		printf("No ha acertado\n");
-		printf("Saldo: %d", saldoFinal);
 	}
+	printf("Saldo: %d", saldoFinal);
 }
 	
 int apuesta(int saldoFinal){
