@@ -26,14 +26,15 @@ int main(int argc, char *argv[]) {
 				estafa(saldoFinal, cantApuesta, copa);
 				rGanadasSeguidas = 0;
 			}else{
-				gano(saldoFinal, cantApuesta, copa);
+				juego(saldoFinal, cantApuesta, copa,true);
 				rGanadasSeguidas++;
 			}
 		}else{
-			perdio(saldoFinal, cantApuesta, copa);
+			juego(saldoFinal, cantApuesta, copa,false);
 			rGanadasSeguidas = 0;
 		}
 	}
+	printf("\nGracias por jugar");
 	
 	return 0;
 }
