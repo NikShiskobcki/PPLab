@@ -20,25 +20,9 @@ void estafa(int &saldoFinal, int cantApuesta, int copa){
 	printf("No ha acertado\n");
 	printf("Saldo: %d", saldoFinal);
 }
-void gano(int &saldoFinal, int cantApuesta, int copa){
-	saldoFinal += cantApuesta;
+	
+void juego(int &saldoFinal, int cantApuesta, int copa, bool gano){
 	switch(copa){
-		case 1: 
-			printf(". O O\n");
-			break;
-		case 2: 
-			printf("O . O\n");
-			break;
-		case 3:
-				printf("O O .\n");
-				break;
-	};
-	printf("Ha acertado\n");
-	printf("Saldo: %d", saldoFinal);
-}
-void perdio(int &saldoFinal, int cantApuesta, int copa){
-	saldoFinal -= cantApuesta;
-		switch(copa){
 	case 1: 
 		printf(". O O\n");
 		break;
@@ -49,8 +33,16 @@ void perdio(int &saldoFinal, int cantApuesta, int copa){
 		printf("O O .\n");
 		break;
 	};
-	printf("No ha acertado\n");
-	printf("Saldo: %d", saldoFinal);
+	
+	if (gano){
+		saldoFinal += cantApuesta;
+		printf("Ha acertado\n");
+		printf("Saldo: %d", saldoFinal);
+	}else{
+		saldoFinal -= cantApuesta;
+		printf("No ha acertado\n");
+		printf("Saldo: %d", saldoFinal);
+	}
 }
 	
 int apuesta(int saldoFinal){
